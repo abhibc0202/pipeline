@@ -21,10 +21,10 @@ pipeline {
     } 
      
     stage ('DEPLOY') {
-      steps {
-        agent {
+             agent {
   label 'master'
-}  
+} 
+      steps {
         echo "this is deploy stage "
         sh "sleep 5"
       }
