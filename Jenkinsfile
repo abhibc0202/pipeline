@@ -6,6 +6,7 @@ pipeline {
   parameters {
   string defaultValue: 'Abhishek', description: 'job is built by', name: 'NAME'
   choice choices: ['main', 'master'], description: 'environment to deploy the application', name: 'BRANCH'
+  credentials credentialType: 'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl', defaultValue: 'git-hub', description: 'credentials', name: 'git', required: false
   } 
   stages {
     stage ('BUILD') {
