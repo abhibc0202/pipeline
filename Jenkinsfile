@@ -16,13 +16,13 @@ pipeline {
         stage ('TEST ON CHROME') {
            steps {
              echo "this is test stage on chrome"
-             sh "sleep5"
+             sh "sleep 5"
            }
         }
          stage ('TEST on firefox') {
            steps {
              echo "this is test stage on firefox"
-             sh "sleep5"
+             sh "sleep 5"
            }
         }  
       } 
