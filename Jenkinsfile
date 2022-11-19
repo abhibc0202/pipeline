@@ -3,6 +3,10 @@ pipeline {
   environment {
     NAME = 'abhishek '
   }
+  parameters {
+  string defaultValue: 'Abhishek', description: 'job is built by', name: 'NAME'
+  choice choices: ['main', 'master'], description: 'environment to deploy the application', name: 'BRANCH'
+  } 
   stages {
     stage ('BUILD') {
       steps {
