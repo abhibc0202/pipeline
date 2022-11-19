@@ -14,19 +14,35 @@ pipeline {
         git credentialsId: 'mysore', url: 'https://github.com/abhibc0202/java1.git'
       }
     }
-    stage ('TEST') {
+    stage ('TEST PARALLE') {
       agent {
   label 'label2'
 }
        environment {
-    BROWSER = 'chorme '
+    BROWSER1 = 'chorme '
+    BROWSER2 = 'firefox'     
   }
-      steps {
-        echo "this is test stage"
-        echo " testing is done on $BROWSER "
-        sh "sleep 5"
-      }
-    } 
+      Parallel{
+        stage ( TEST on $BROWSER1 ) {
+           steps {
+             echo "this is test stage"
+             sh '''
+             sleep 5
+             echo " testing is done on $BROWSER1 "
+             '''
+           }
+        }
+         stage ( TEST on $BROWSER2 ) {
+           steps {
+             echo "this is test stage"
+             sh '''
+             sleep 5
+             echo " testing is done on $BROWSER2 "
+             '''
+           }
+        }  
+      } 
+    }    
      
     stage ('DEPLOY') {
              agent {
