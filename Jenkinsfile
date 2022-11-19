@@ -18,8 +18,12 @@ pipeline {
       agent {
   label 'label2'
 }
+       environment {
+    BROWSER = 'chorme '
+  }
       steps {
         echo "this is test stage"
+        echo " testing is done on $BROWSER "
         sh "sleep 5"
       }
     } 
