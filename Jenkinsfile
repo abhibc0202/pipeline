@@ -11,7 +11,7 @@ pipeline {
         git credentialsId: 'mysore', url: 'https://github.com/abhibc0202/java1.git'
       }
     }
-    stage ('TEST PARALLELE') {
+    stage ('TEST PARALLEL') {
       Parallel {
         stage ('TEST ON CHROME') {
            steps {
