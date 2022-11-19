@@ -1,13 +1,10 @@
 pipeline {
-  agent none; 
+  agent any; 
   environment {
     NAME = 'abhishek '
   }
   stages {
     stage ('BUILD') {
-      agent {
-  label 'label1'
-}
       steps {
         echo " this is build stage "
         echo "$NAME"
@@ -15,26 +12,19 @@ pipeline {
       }
     }
     stage ('TEST PARALLELE') {
-      agent {
-  label 'label2'
-}
-       environment {
-    BROWSER1 = 'chorme '
-    BROWSER2 = 'firefox'     
-  }
       Parallel{
-        stage ( 'TEST on chrome' ) {
+        stage ('TEST ON CHROME') {
            steps {
-             echo "this is test stage"
+             echo "this is test stage on chrome"
              sh '''
              sleep 5
-             echo " testing is done on $BROWSER1 "
+             echo " testing is done on chrome "
              '''
            }
         }
-         stage ( 'TEST on firefox' ) {
+         stage ('TEST on firefox') {
            steps {
-             echo "this is test stage"
+             echo "this is test stage on firefox"
              sh '''
              sleep 5
              echo " testing is done on $BROWSER2 "
