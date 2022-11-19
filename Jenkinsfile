@@ -12,7 +12,7 @@ pipeline {
       }
     }
     stage ('TEST PARALLELE') {
-      Parallel{
+      Parallel {
         stage ('TEST ON CHROME') {
            steps {
              echo "this is test stage on chrome"
