@@ -23,7 +23,7 @@ pipeline {
     BROWSER2 = 'firefox'     
   }
       Parallel{
-        stage ( TEST on $BROWSER1 ) {
+        stage ( TEST on chrome ) {
            steps {
              echo "this is test stage"
              sh '''
@@ -32,7 +32,7 @@ pipeline {
              '''
            }
         }
-         stage ( TEST on $BROWSER2 ) {
+         stage ( TEST on firefox ) {
            steps {
              echo "this is test stage"
              sh '''
