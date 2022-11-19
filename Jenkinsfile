@@ -16,6 +16,7 @@ firefox''', name: 'browsers'
       steps {
         echo " this is build stage "
         echo "$NAME"
+        echo "$browser"
         git credentialsId: 'mysore', url: 'https://github.com/abhibc0202/java1.git'
       }
     }
