@@ -14,7 +14,7 @@ pipeline {
         git credentialsId: 'mysore', url: 'https://github.com/abhibc0202/java1.git'
       }
     }
-    stage ('TEST PARALLE') {
+    stages ('TEST PARALLE') {
       agent {
   label 'label2'
 }
