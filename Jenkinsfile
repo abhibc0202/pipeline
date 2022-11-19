@@ -8,6 +8,8 @@ pipeline {
   choice choices: ['main', 'master'], description: 'environment to deploy the application', name: 'BRANCH'
   credentials credentialType: 'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl', defaultValue: 'git-hub', description: 'credentials', name: 'git', required: false
    file ''
+  text defaultValue: '''chrome
+firefox''', name: 'browsers'
   } 
   stages {
     stage ('BUILD') {
