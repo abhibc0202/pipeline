@@ -16,28 +16,19 @@ pipeline {
         stage ('TEST ON CHROME') {
            steps {
              echo "this is test stage on chrome"
-             sh '''
-             sleep 5
-             echo " testing is done on chrome "
-             '''
+             sh 'sleep5'
            }
         }
          stage ('TEST on firefox') {
            steps {
              echo "this is test stage on firefox"
-             sh '''
-             sleep 5
-             echo " testing is done on $BROWSER2 "
-             '''
+             sh 'sleep5'
            }
         }  
       } 
     }    
      
     stage ('DEPLOY') {
-             agent {
-  label 'master'
-} 
       steps {
         echo "this is deploy stage "
         sh "sleep 5"
