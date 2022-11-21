@@ -1,5 +1,5 @@
 pipeline {
-  agent none; 
+  agent any; 
   environment {
     NAME = 'abhishek '
   }
@@ -12,16 +12,13 @@ pipeline {
 firefox''', name: 'browsers'
   } 
   stages {
-        stage ('git clone') {
-            agent {
-  label 'label1'
-}
-         steps {
+        stage ('BUILD') {
+  steps {
             git(
             credentialsId: 'git-hub', url: 'https://github.com/abhibc0202/java1.git'
             )   
          sh '''
-            clean package
+            mvn clean package
             '''
          }
        }   
