@@ -1,5 +1,5 @@
 pipeline {
-  agent any; 
+  agent none; 
   environment {
     NAME = 'abhishek '
   }
@@ -14,7 +14,7 @@ firefox''', name: 'browsers'
   stages {
         stage ('git clone') {
             agent {
-  label 'label2'
+  label 'label1'
 }
          steps {
             git(
