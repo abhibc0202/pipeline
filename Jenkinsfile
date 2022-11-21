@@ -12,11 +12,25 @@ pipeline {
 firefox''', name: 'browsers'
   } 
   stages {
+        stage ('git clone') {
+            agent {
+  label 'label1'
+}
+         steps {
+            git(
+            credentialsId: 'git-hub', url: 'https://github.com/abhibc0202/java1.git'
+            )   
+         }
+       }   
+  stage {
     stage ('BUILD') {
+      agent {
+  label 'label1'
+} 
       steps {
         echo " this is build stage "
         echo "$NAME"
-        git credentialsId: 'mysore', url: 'https://github.com/abhibc0202/java1.git'
+       sh ' mvn clean package '
       }
     }
     stage ('TEST PARALLEL') {
