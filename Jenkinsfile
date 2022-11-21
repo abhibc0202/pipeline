@@ -29,7 +29,7 @@ firefox''', name: 'browsers'
       steps {
         echo " this is build stage "
         echo "$NAME"
-       sh ' mvn clean package '
+       sh '''mvn clean package'''
       }
     }
     stage ('TEST PARALLEL') {
