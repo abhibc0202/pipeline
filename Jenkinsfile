@@ -14,7 +14,7 @@ firefox''', name: 'browsers'
   stages {
         stage ('git clone') {
             agent {
-  label 'label1'
+  label 'label2'
 }
          steps {
             git(
@@ -24,7 +24,7 @@ firefox''', name: 'browsers'
        }   
     stage ('BUILD') {
       agent {
-  label 'label1'
+  label 'label2'
 } 
       steps {
         echo " this is build stage "
