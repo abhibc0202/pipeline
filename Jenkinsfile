@@ -20,9 +20,9 @@ firefox''', name: 'browsers'
             git(
             credentialsId: 'git-hub', url: 'https://github.com/abhibc0202/java1.git'
             )   
-         sh '
+         sh '''
             clean package
-            '
+            '''
          }
        }   
     stage ('TEST PARALLEL') {
