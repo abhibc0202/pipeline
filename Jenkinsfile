@@ -18,7 +18,7 @@ firefox''', name: 'browsers'
 }
          steps {
             git(
-            credentialsId: 'git-hub', url: 'https://github.com/abhibc0202/java1.git'
+            credentialsId: 'git-hub', url: 'https://github.com/abhibc0202/javapvt.git
             )   
          }
        }   
