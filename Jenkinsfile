@@ -20,18 +20,11 @@ firefox''', name: 'browsers'
             git(
             credentialsId: 'git-hub', url: 'https://github.com/abhibc0202/java1.git'
             )   
+         sh '''
+            mvn clean package
+            '''
          }
        }   
-    stage ('BUILD') {
-      agent {
-  label 'label2'
-} 
-      steps {
-       sh '''
-                mvn clean package
-                '''
-      }
-    }
     stage ('TEST PARALLEL') {
       parallel {
         stage ('TEST ON CHROME') {
