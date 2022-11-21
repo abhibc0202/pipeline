@@ -22,7 +22,6 @@ firefox''', name: 'browsers'
             )   
          }
        }   
-  stage {
     stage ('BUILD') {
       agent {
   label 'label1'
