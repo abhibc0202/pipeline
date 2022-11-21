@@ -27,9 +27,9 @@ firefox''', name: 'browsers'
   label 'label2'
 } 
       steps {
-        echo " this is build stage "
-        echo "$NAME"
-       sh '''mvn clean install'''
+       sh '''
+                mvn clean package
+                '''
       }
     }
     stage ('TEST PARALLEL') {
